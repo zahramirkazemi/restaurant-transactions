@@ -8,3 +8,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+select {
+  background-image: url(https://img.icons8.com/ios-filled/30/ffffff/expand-arrow--v1.png), linear-gradient(to left, #ffffff 11rem,#407fe5 11rem);
+  background-repeat: no-repeat, repeat;
+  background-position: left 1rem top 50%, 0 0;
+  background-size: 1rem auto, 100%;
+}
