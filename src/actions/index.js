@@ -1,4 +1,9 @@
-import { FETCH_CONCURRENCY_COSTS, FETCH_PAYMENTS, FETCH_MISC_EXPENSES, FETCH_TRIP_FINANCIALS } from "../actions/actionTypes";
+import {
+        FETCH_CONCURRENCY_COSTS,
+        FETCH_PAYMENTS,
+        FETCH_MISC_EXPENSES,
+        FETCH_TRIP_FINANCIALS,
+} from "./actionTypes";
 
 export const fetchTransactions = async (dispatch) => {
         const resp = await fetch("data.json");

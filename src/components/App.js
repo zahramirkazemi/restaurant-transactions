@@ -3,11 +3,12 @@ import Header from "./Header";
 import { useState } from "react";
 
 function App() {
-  const [filter, setFilter] = useState('all')
+  const [filter, setFilter] = useState('all');
+  const [search, setSearch] = useState('');
   return (
     <div className="w-full">
-      <Header filter={filter} setFilter={setFilter}/>
-      <TransactionList filter={filter}/>
+      <Header filter={filter} search={search} setSearch={setSearch} setFilter={setFilter}/>
+      <TransactionList filter={filter} search={search}/>
     </div>
   );
 }
