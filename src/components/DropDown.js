@@ -2,7 +2,7 @@ import SearchBox from './SearchBox';
 
 const DropDown = ({ filter, setFilter ,search, setSearch }) => {
   return (
-    <div>
+    <div >
       <div dir="rtl" className="inline-block">
         <select
           onChange={(e) => {
@@ -11,7 +11,7 @@ const DropDown = ({ filter, setFilter ,search, setSearch }) => {
           value={filter}
           name="interaction"
           id="interaction"
-          className="font-medium p-2 appearance-none border rounded border-gray-400 w-56 outline-0"
+          className="font-medium text-sm md:text-base p-1 md:p-2 appearance-none border rounded border-gray-400 w-36 md:w-52 outline-0"
         >
           <option value="all">همه تراکنش ها</option>
           <option value="concurrency_costs">هزینه خرید ظرفیت</option>
@@ -20,7 +20,7 @@ const DropDown = ({ filter, setFilter ,search, setSearch }) => {
           <option value="misc_expenses">هزینه متفرقه</option>
         </select>
       </div>
-      <span className="mx-3 font-medium">نوع تراکنش</span>      
+      <span className="mx-1 md:mx-3 font-medium text-sm md:text-base">نوع تراکنش</span>      
       {filter === "trip_financials"? <SearchBox search={search} setSearch={setSearch}/>: <></>}
     </div>
   );

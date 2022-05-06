@@ -7,8 +7,8 @@ function App() {
   const [search, setSearch] = useState('');
   return (
     <div className="w-full">
-      <Header filter={filter} search={search} setSearch={setSearch} setFilter={setFilter}/>
-      <TransactionList filter={filter} search={search}/>
+      <Header filter={filter} search={search} setSearch={setSearch} setFilter={setFilter} />
+      <TransactionList filter={filter} search={search} />
     </div>
   );
 }
