@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchTransactions } from "../actions";
+import SortFunction from "../utils/SortFunction";
 import Transaction from "./Transaction";
 
 const TransactionList = ({ filter, search }) => {
@@ -21,16 +22,7 @@ const TransactionList = ({ filter, search }) => {
         map.set(transaction.day, [transaction]);
       }
     });
-
-    transactions = Array.from(map.entries()).sort((a, b) => {
-      if (a[0] > b[0]) {
-        return -1;
-      }
-      if (a[0] < b[0]) {
-        return 1;
-      }
-      return 0;
-    })
+    transactions = Array.from(map.entries()).sort((a, b) => SortFunction(a[0],b[0]))
   };
 
   const renderList = () => {

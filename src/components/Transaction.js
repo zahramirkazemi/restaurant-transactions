@@ -4,6 +4,7 @@ import {
     FETCH_MISC_EXPENSES,
     FETCH_TRIP_FINANCIALS,
 } from "../actions/actionTypes";
+import SortFunction from "../utils/SortFunction";
 import ConcurrencyRow from "./tableRows/ConcurrencyRow";
 import MiscRow from "./tableRows/MiscRow";
 import PaymentRow from "./tableRows/PaymentRow";
@@ -12,15 +13,7 @@ import TripRow from "./tableRows/TripRow";
 const DayTransaction = ({ day, transactions }) => {
     const renderRows = () => {
         return transactions
-            .sort((a, b) => {
-                if (a.hour > b.hour) {
-                    return -1;
-                }
-                if (a.hour < b.hour) {
-                    return 1;
-                }
-                return 0;
-            })
+            .sort((a, b) => SortFunction(a.hour, b.hour))
             .map((transaction) => {
                 switch (transaction.type) {
                     case FETCH_CONCURRENCY_COSTS:
@@ -60,7 +53,7 @@ const DayTransaction = ({ day, transactions }) => {
             </div>
         );
     } else {
-        <></>;
+        return <></>;
     }
 };
 

@@ -1,10 +1,7 @@
-import SearchBox from './SearchBox';
-
-const DropDown = ({ filter, setFilter ,search, setSearch }) => {
+const DropDown = ({ filter, setFilter }) => {
   return (
-    <div >
-      <div dir="rtl" className="inline-block">
-        <select
+      <div className="inline-block">
+        <select dir="rtl"
           onChange={(e) => {
             setFilter(e.target.value);
           }}
@@ -19,10 +16,8 @@ const DropDown = ({ filter, setFilter ,search, setSearch }) => {
           <option value="trip_financials">هزینه سفر</option>
           <option value="misc_expenses">هزینه متفرقه</option>
         </select>
-      </div>
-      <span className="mx-1 md:mx-3 font-medium text-sm md:text-base">نوع تراکنش</span>      
-      {filter === "trip_financials"? <SearchBox search={search} setSearch={setSearch}/>: <></>}
-    </div>
+        <span className="mx-1 md:mx-3 font-medium text-sm md:text-base">نوع تراکنش</span>  
+      </div>  
   );
 };
 
