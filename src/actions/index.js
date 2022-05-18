@@ -6,7 +6,7 @@ import {
 } from "./actionTypes";
 
 export const fetchTransactions = async (dispatch) => {
-        const resp = await fetch("data.json");
+        const resp = await fetch(process.env.PUBLIC_URL + "/data.json");
         const data = await resp.json();
         dispatch({ type: FETCH_TRIP_FINANCIALS, payload: data.trip_financials });
         dispatch({ type: FETCH_PAYMENTS, payload: data.payments });
